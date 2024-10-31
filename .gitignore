@@ -53,6 +53,7 @@ Thumbs.db
 /env
 
 */migrations/
+*/static/
 
 ./celerybeat-schedule
 *celerybeat-schedule*
