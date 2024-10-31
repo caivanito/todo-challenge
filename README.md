@@ -35,3 +35,35 @@ El usuario de la aplicación tiene que ser capaz de:
 - El Readme debe contener todas las instrucciones para poder levantar la aplicación, en caso de ser necesario, y explicar cómo se usa.
 - Disponibilidad para realizar una pequeña demo del proyecto al finalizar el challenge.
 - Tiempo para la entrega: Aproximadamente 7 días.
+
+
+## PASOS PARA LEVANTAR LA APLICACIÓN
+- Ejecutar docker
+```
+set -a
+source .var_envs
+docker compose up --build
+```
+- Ingresar al contenedor
+```
+docker exec -it app_invera_tasks bash
+```
+
+- Migrar base de datos
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+- Crear usuario
+```
+python manage.py createsuperuser
+```
+
+- Levantar archivos estáticos
+```
+python manage.py collectstatic
+```
+
+- Utilizar el archivo invera_tasks.json para configurar el collection en Insomnia/Postman para realizar pruebas GET/POST
+  
